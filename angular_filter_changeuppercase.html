@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="lib/angular.js"></script>
+	<script src="script_8.js"></script>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		<table>
+			<tr ng-repeat="employee in employees">
+				<td>
+					{{ employee.name | uppercase }}
+				</td>
+			</tr>
+			<tr ng-repeat="employee in employees">
+				<td>
+					{{ employee.name | lowercase }}
+				</td>
+			</tr>
+			<tr ng-repeat="employee in employees">
+				<td>
+					{{ employee.salary | number:2 }}
+				</td>
+			</tr>
+			<tr ng-repeat="employee in employees">
+				<td>
+					{{ employee.salary | currency:"$":1 }}
+				</td>
+			</tr>
+		</table>
+		<br><br>
+		<h3>Add limit to the data using filter :</h3>
+		<br><br>
+		Rows To Display : 
+		<input type="number" step="1" min="0" max="5" ng-model="rowLimit">
+		<br><br>
+		<table border="1">
+			<tr ng-repeat="employee in employees | limitTo :rowLimit">
+				<td>
+					{{ employee.name }}
+				</td>
+				<td>
+					{{ employee.gender }}
+				</td>
+				<td>
+					{{ employee.salary }}
+				</td>
+			</tr>
+		</table>
+		<br><br>
+		<h3>Sort By :</h3>
+		<select ng-model="sortColumn">
+			<option value="name">Name Asc</option>
+			<option value="-salary">Salary Desc</option>
+		</select>
+		<br><br>
+		<table border="1">
+			<tr ng-repeat="employee in employees | orderBy : sortColumn">
+				<td>
+					{{ employee.name }}
+				</td>
+				<td>
+					{{ employee.gender }}
+				</td>
+				<td>
+					{{ employee.salary }}
+				</td>
+			</tr>
+		</table>
+		<br><br>
+		<h3>Search Box:</h3>
+		<input type="text" name="" ng-model="searchBox">
+		<br><br>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>
+						Name
+					</th>
+					<th>
+						Gender
+					</th>
+					<th>
+						Salary
+					</th>
+				</tr>
+			</thead>
+			<tr ng-repeat="employee in employees | filter : searchBox">
+				<td>
+					{{ employee.name }}
+				</td>
+				<td>
+					{{ employee.gender }}
+				</td>
+				<td>
+					{{ employee.salary }}
+				</td>
+			</tr>
+		</table>
+		<br><br>
+		<h3>Search By Exact Match:</h3>
+		<input type="text" name="" ng-model="searchBox.name" placeholder="Search By Name">
+		<input type="text" name="" ng-model="searchBox.salary" placeholder="Search By Salary">
+		<input type="checkbox" name="" ng-model="exactMatch">
+		Extact Match
+		<br><br>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>
+						Name
+					</th>
+					<th>
+						Gender
+					</th>
+					<th>
+						Salary
+					</th>
+				</tr>
+			</thead>
+			<tr ng-repeat="employee in employees | filter : searchBox:exactMatch">
+				<td>
+					{{ employee.name }}
+				</td>
+				<td>
+					{{ employee.gender }}
+				</td>
+				<td>
+					{{ employee.salary }}
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

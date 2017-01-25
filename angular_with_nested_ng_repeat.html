@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="lib/angular.js"></script>
+	<script src="script_5.js"></script>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		<ul>
+			<li ng-repeat="contrie in contries">
+				{{ contrie.name }}
+				<ul>
+					<li ng-repeat="city in contrie.cities">
+						{{ city.name }}
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>
+</body>
+</html>

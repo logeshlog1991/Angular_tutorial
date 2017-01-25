@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="lib/angular.js"></script>
+	<script src="script_7.js"></script>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Gender</th>
+					<th>Salary</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees">
+					<td>{{ employee.name }}</td>
+					<td>{{ employee.gender }}</td>
+					<td>{{ employee.salary }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br/><br/>
+	<div ng-controller="demo">
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Gender</th>
+					<th>Salary</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="emp in emplo">
+					<td>{{ emp.name }}</td>
+					<td>{{ emp.gender }}</td>
+					<td>{{ emp.salary }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

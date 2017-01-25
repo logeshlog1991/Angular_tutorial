@@ -1,0 +1,42 @@
+<br/><br/>
+<h3>Students Details</h3>
+<hr/>
+<br/>
+<table border="1">	
+	<tbody ng-repeat="student in students_deatils">
+		<tr>
+			<td style="font-style: bold">
+				Id
+			</td>
+			<td>
+				{{ student.id }}
+			</td>
+		</tr>
+		<tr>
+			<td style="font-style: bold">
+				Name :
+			</td>
+			<td>
+				{{ student.name }}
+			</td>
+		</tr>
+		<tr>
+			<td style="font-style: bold">
+				Department :
+			</td>
+			<td>
+				{{ student.department }}
+			</td>
+		</tr>
+		<tr>
+			<td style="font-style: bold">
+				Email :
+			</td>
+			<td>
+				{{ student.email }}
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br/>
+<a class="students_details" href="http://localhost/angular_js_1/routing/students"><< Go Back</a>	

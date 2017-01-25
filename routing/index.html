@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+	<title></title>
+	<meta charset="utf-8">	
+	<base href="/angular_js_1/routing/">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="scripts/angular.min.js"></script>
+	<script src="scripts/angular-route.js"></script>
+	<script type="text/javascript" src="scripts/script_1.js"></script>	
+	<script type="text/ng-template">
+
+	</script>
+	<style type="text/css">
+		body{
+			font-family: arial;
+			font-size: 12px;
+			background-color: #ECEBEB;
+		}
+		.wrapper{
+			width: 90%;
+			background-color: #fff;
+			margin: 0px auto;
+		}
+		.header{
+			background-color: #fff;
+			height: auto;
+			border: 1px solid black;
+		}
+		.logo{
+			padding: 10px;
+			text-align: left;
+		}
+		.nav{
+			float: left;
+			background-color: green;
+			width: 100%;
+		}
+
+		li{
+			list-style: none;
+			display:inline;
+		}
+		ul li a.fnav{
+			text-decoration: none;
+			padding: 0 10px;
+			color: white;
+		}
+		a.fnav:hover{
+			color:white;
+			background-color: gray;
+			padding:10px;
+		}
+		.container{
+			padding: 20px;
+			background-color: #fff;
+			height: 400px;
+			border: 1px solid black;
+		}
+		.footer{
+			margin-top: 0px;
+			color: white;
+			text-align: center;
+			height: 50px;
+			background-color: black;
+		}
+		h3{
+			margin-top: 20px;
+		}
+		a.students_details{
+			list-style: none;
+		}
+		table {
+		    border-collapse: collapse;
+		}
+		.msg-Success{
+			color: green;
+		}
+		.msg-Error{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<div class="logo">
+				<h2>LOGO</h2>
+			</div>
+			<div class="nav">
+				<ul>
+					<li><a class="fnav" href="home">Home</a></li>	
+					<li><a class="fnav" href="course">Courses</a></li>	
+					<li><a class="fnav" href="students">Students</a></li>
+					<li><a class="fnav" href="login">Login</a></li>	
+				</ul>
+			</div>	
+		</div>
+		<div class="container">			
+			<ng-view></ng-view>
+		</div>
+		<div class="footer">
+			Footer
+		</div>
+	</div>
+</body>
+</html>

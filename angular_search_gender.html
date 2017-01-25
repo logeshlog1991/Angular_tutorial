@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="lib/angular.js"></script>
+	<script src="script_10.js"></script>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		<input type="checkbox" name="" ng-model="hideSalary">
+		<table border="1">
+			<thead>
+				<tr>
+					<th>
+						Name
+					</th>
+					<th>
+						Gender
+					</th>
+					<th ng-show="hideSalary">
+						Salary
+					</th>
+				</tr>
+			</thead>
+			<tr ng-repeat="employee in employees">
+				<td>
+					{{ employee.name }}
+				</td>
+				<td>
+					{{ employee.gender }}
+				</td>
+				<td ng-show="hideSalary">
+					{{ employee.salary }}
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

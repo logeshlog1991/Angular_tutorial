@@ -1,0 +1,30 @@
+<br/><br/>
+<h3>Courses List</h3>
+<br/>
+<table border="1">
+	<thead>
+		<tr>
+			<th>
+				Id
+			</th>
+			<th>
+				Name
+			</th>
+			<th>
+				Duration
+			</th>
+		</tr>
+	</thead>
+	<tbody ng-repeat="course in courses">
+			<td>
+				{{ course.id }}
+			</td>
+			<td>
+				{{ course.name }}
+			</td>
+			<td>
+				{{ course.duration }} Year
+			</td>
+		</tr>
+	</tbody>
+</table>

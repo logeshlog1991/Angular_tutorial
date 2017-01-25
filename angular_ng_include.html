@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="lib/angular.js"></script>
+	<script src="script_11.js"></script>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		Select The Template :
+		<select ng-model="employeeTemplate">
+			<option value="employee_list.html">employeelist</option>
+			<option value="employee_table.html">employeetable</option>
+		</select>
+		<div ng-include="employeeTemplate">
+
+
+		</div>
+	</div>
+</body>
+</html>
